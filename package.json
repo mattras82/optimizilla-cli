@@ -1,10 +1,11 @@
 {
   "name": "optimizilla-cli",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "private": false,
   "bin": {
     "optimizilla": "index.js"
   },
+  "type": "module",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -23,9 +24,9 @@
   "license": "MIT",
   "description": "Script to utilize optimizilla and avoid the pesky ui",
   "dependencies": {
-    "easy-table": "1.1.0",
-    "log-update": "2.0.0",
-    "meow": "3.7.0",
-    "request": "2.87.0"
+    "axios": "1.13.2",
+    "easy-table": "1.2.0",
+    "log-update": "7.0.1",
+    "meow": "14.0.0"
   }
 }
