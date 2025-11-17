@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import fs from "fs";
-import meow from 'meow';
+import meow from "meow";
 import url from "url";
 import path from "path";
 import asynchronously from "./lib/async.js";
@@ -24,11 +24,17 @@ const cli = meow(
       $ optimizilla xpto.jpg --output ./ --replace
 `,
   {
-	importMeta: import.meta, // This is required
-    alias: {
-      o: "output",
-      r: "replace",
-      d: "dry",
+    importMeta: import.meta, // This is required
+    flags: {
+      output: {
+        shortFlag: "o",
+      },
+      replace: {
+        shortFlag: "r",
+      },
+      dry: {
+        shortFlag: "d",
+      },
     },
   }
 );
@@ -95,7 +101,6 @@ function startProcessingFile(fileName) {
       .postForm(`${MAIN_HOST}/upload/${uniqPathId}`, formData)
       .then((r) => resolve({ fileName, uniqPathId, randomId }))
       .catch((e) => {
-        console.log('errrrrror', e);
         let error = e.response || e.message;
         reject({ fileName, uniqPathId, randomId, error });
       });
@@ -186,7 +191,6 @@ cli.input
     startProcessingFile(singleFileName, cli.flags)
       .then((options) => asynchronously(processGenerator(options, cli.flags)))
       .catch((options) => {
-        console.log('ded', options);
         printResult(
           Object.assign(options, {
             status: "error",
