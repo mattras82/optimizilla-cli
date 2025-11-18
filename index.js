@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-import fs from "fs";
-import meow from "meow";
-import url from "url";
-import path from "path";
-import asynchronously from "./lib/async.js";
-import printResult from "./lib/print-result.js";
-import getStatus from "./lib/get-status.js";
-import axios from "axios";
+const fs = require("fs");
+const meow = require("meow");
+const url = require("url");
+const path = require("path");
+const asynchronously = require("./lib/async.js");
+const printResult = require("./lib/print-result.js");
+const getStatus = require("./lib/get-status.js");
+const axios = require("axios").default;
 const MAIN_HOST = "https://imagecompressor.com";
 
 const cli = meow(
@@ -24,7 +24,6 @@ const cli = meow(
       $ optimizilla xpto.jpg --output ./ --replace
 `,
   {
-    importMeta: import.meta, // This is required
     flags: {
       output: {
         alias: "o",
