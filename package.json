@@ -1,6 +1,6 @@
 {
   "name": "optimizilla-cli-new",
-  "version": "6.0.1",
+  "version": "5.1.0",
   "private": false,
   "bin": {
     "optimizilla": "index.js"
@@ -27,6 +27,6 @@
     "axios": "1.13.2",
     "easy-table": "1.2.0",
     "log-update": "^4.0.0",
-    "meow": "14.0.0"
+    "meow": "9.0.0"
   }
 }

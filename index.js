@@ -27,13 +27,13 @@ const cli = meow(
     importMeta: import.meta, // This is required
     flags: {
       output: {
-        shortFlag: "o",
+        alias: "o",
       },
       replace: {
-        shortFlag: "r",
+        alias: "r",
       },
       dry: {
-        shortFlag: "d",
+        alias: "d",
       },
     },
   }
